@@ -642,16 +642,10 @@ AlienBullet.prototype = new Bullet();
 
 Asteroid = function () {
   this.init("asteroid",
-      [-10,   0,
-        -5,   7,
-        -3,   4,
-        1,  10,
-        5,   4,
-        10,   0,
-        5,  -6,
-        2, -10,
-        -4, -10,
-        -4,  -5]);
+      [-10,   10,
+       -10,   0,
+        0,   0,
+        0,  10]);
 
   this.visible = true;
   this.scale = 6;
@@ -875,7 +869,7 @@ SFX.muted = false;
 
 Game = {
   score: 0,
-  totalAsteroids: 4,
+  totalAsteroids: 5,
   lives: 0,
 
   canvasWidth: 800,
@@ -941,7 +935,7 @@ Game = {
 
       Game.score = 0;
       Game.lives = 2;
-      Game.totalAsteroids = 2;
+      Game.totalAsteroids = 4;
       Game.spawnAsteroids();
 
       Game.nextBigAlienTime = Date.now() + 30000 + (30000 * Math.random());
